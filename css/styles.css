@@ -1,0 +1,104 @@
+body{
+    background-color: #ecf0f1;
+}
+
+
+.gallery-container{
+    display: flex;
+    /* The flex-wrap property specifies whether the flexible items should wrap or not. */
+    flex-wrap: wrap;
+    background-color: #fff;
+    width: 94%;
+    padding: 10px;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
+    margin: 0px auto;
+}
+
+/* In order for images to FIT within your DIVs, you need to get the divs a width/height */
+/* Then give the image a width: 100% and an object-fit property to FIT inside that parent div */
+.gallery-item{
+    width: 300px;
+    height: 300px;
+    flex-basis: 32.7%;
+    margin-bottom: 6px;
+    opacity: 0.85;
+    cursor: pointer;
+}
+
+.gallery-item:hover{
+    opacity: 1;
+}
+.gallery-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* LIGHTBOX */
+.lightbox{
+    position: fixed;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    top: 0;
+    left: 0;
+}
+
+.lightbox-content{
+    position: relative;
+    width: 65%;
+    /* height: 58%; */
+    height: 75%;
+    margin: 5% auto;
+    margin-top: 100px;
+}
+
+.lightbox-content img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* border: 6px solid #fff; */
+
+}
+
+.lightbox-prev,
+.lightbox-next{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0);
+    color: #fff;
+    padding: 9px;
+    top: 45%;
+    cursor: pointer;
+    font-size: 48px;
+}
+
+.lightbox-prev{
+    left: 0;
+}
+
+.lightbox-next{
+    right: 0;
+}
+
+/* MAKE IT RESPONSIVE */
+@media(max-width: 767px){
+    .gallery-container{
+        width: 100%;
+    }
+
+    .gallery-item{
+        flex-basis: 49.80%;
+        margin-bottom: 3px;
+    }
+
+    .lightbox-content{
+        width: 80%;
+        height: 60%;
+        margin: 15% auto;
+    }
+
+
+}
